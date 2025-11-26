@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Calibri:wght@400;500;600&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+  <script src="study.js"></script>
+  <link rel="stylesheet" href="study.css">
+</head>
+<body>
+<div class="page">
+
+  <nav>
+    <div class="nav-pill">
+      <div class="logo">study connect</div>
+      <ul class="nav-links">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#advice-wall">Advice</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero" id="about">
+      <div class="hero-left">
+        <h1>Connect, Learn, and Grow Together!</h1>
+        <p>A community where students help each other succeed by sharing real experiences, tips, and advice — especially for upcoming freshmen.</p>
+        <button class="open-advice" data-topic="General advice for students" data-category="General">
+          Join the Conversation
+        </button>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card dark-card">
+          <h3>Share Your Insights</h3>
+          <p>Select a topic related to your course or college life and write a thoughtful message or tip for your peers.</p>
+          <button class="card-btn open-advice" data-topic="Share Your Insights" data-category="General">Share advice</button>
+        </div>
+
+        <div class="hero-card dark-card">
+          <h3>Browse Messages</h3>
+          <p>Explore messages shared by your peers! Search by topic to uncover thoughtful insights and tips posted just for you.</p>
+          <button class="card-btn" onclick="location.href='#advice-wall'">See student advice</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>What’s on Your Mind? Let’s Discuss!</h2>
+        <button id="openQuestionModal" class="ask-btn">Ask a Question</button>
+      </div>
+
+      <div class="card-grid triple-grid" id="questionList"></div>
+
+      <button id="toggleQuestionsBtn" class="more-btn" style="display: none;">Show more questions</button>
+    </section>
+
+    <section class="section" id="advice-wall">
+      <h2>Student Advice Wall</h2>
+      <p class="section-subtitle">Real tips from real students — sharing their experiences with upcoming freshmen.</p>
+
+      <div class="advice-header">
+        <p>Share your own tip or scroll through to see what others have posted.</p>
+        <button class="open-advice" data-topic="General advice for students" data-category="General">Share new advice</button>
+      </div>
+
+      <div class="card-grid advice-grid" id="adviceList">
+        <p class="empty-message" id="emptyMessage">No advice has been shared yet. Be the first to post something helpful!</p>
+      </div>
+
+      <button id="toggleAdviceBtn" class="more-btn" style="display: none;">Show more advice</button>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#advice-wall">Advice</a>
+      <a href="#top">Back to top</a>
+    </div>
+    <p>© StudyConnect. All Rights Reserved.</p>
+  </footer>
+
+</div>
+
+<div class="modal" id="adviceModal">
+  <div class="modal-content">
+    <h3>Share Your Advice</h3>
+    <p class="modal-topic" id="modalTopic"></p>
+
+    <label>Your name (optional):
+      <input type="text" id="nameInput" placeholder="Anonymous">
+    </label>
+
+    <label>Your advice:
+      <textarea id="adviceInput" placeholder="Share your experience or tips here..."></textarea>
+    </label>
+
+    <div class="modal-buttons">
+      <button id="submitAdvice">Post Advice</button>
+      <button id="closeModal" class="cancel-btn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="questionModal">
+  <div class="modal-content">
+    <h3>Ask a Question</h3>
+
+    <label>Question:
+      <textarea id="questionText" placeholder="Write your question here..."></textarea>
+    </label>
+
+    <label>Topic / category (optional):
+      <input type="text" id="questionCategory" placeholder="e.g. Motivation, Internships, Exams">
+    </label>
+
+    <div class="modal-buttons">
+      <button id="submitQuestion">Post Question</button>
+      <button id="closeQuestionModal" class="cancel-btn">Cancel</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
